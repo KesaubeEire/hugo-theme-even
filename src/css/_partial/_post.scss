@@ -3,15 +3,19 @@
 // ==============================
 
 .posts {
-  margin-bottom: $post-list-margin-bottom;
-  border-bottom: $post-border;
+  // margin-bottom: $post-list-margin-bottom;
+  // border-bottom: $post-border;
+  margin-bottom: 0;
+  border-bottom: 0;
 }
 
 .post {
-  padding: $post-padding;
+  // padding: $post-padding;
+  padding: 0;
 
   & + .post {
-    border-top: $post-border;
+    // border-top: $post-border;
+    border-top: 0;
   }
 
   @import '_post/header';

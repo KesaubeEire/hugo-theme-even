@@ -10,7 +10,9 @@ categories:
 
 # ===== footer =====
 powered:
-  other: "由 %s 强力驱动"
+  # one : "间歇性踌躇满志 持续性混吃等死"
+  # other: "由 %s 强力驱动"
+  other: "间歇性踌躇满志_持续性混吃等死<br>引擎 - %s"
 
 theme:
   other: "主题"

@@ -1,7 +1,7 @@
 <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="{{ .URL }}">{{ .Title }}</a></h1>
-    <div class="post-meta">
+    <span class="post-title"><a class="post-link" href="{{ .URL }}">>_ {{ .Title }}</a></span>
+    <span class="post-meta">
       <span class="post-time"> {{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }} </span>
       {{ with .Params.categories -}}
         <div class="post-category">
@@ -14,15 +14,16 @@
         <span class="more-meta"> {{ T "wordCount" .WordCount }} </span>
         <span class="more-meta"> {{ T "readingTime" .ReadingTime }} </span>
       {{- end }}
-    </div>
+      </span>
   </header>
   <!-- Content -->
   <div class="post-content">
-    <div class="post-summary">
+    <!-- 这里进行了去除 摘要 和 "阅读更多" -->
+    <!-- <div class="post-summary">
       {{ .Summary }}
     </div>
     <div class="read-more">
       <a href="{{ .URL }}" class="read-more-link">{{ T "readMore" }}</a>
-    </div>
+    </div> -->
   </div>
 </article>

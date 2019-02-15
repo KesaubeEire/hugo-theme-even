@@ -8,7 +8,8 @@
   {{ if .Site.LanguagePrefix -}}
     <a href="{{ .Site.LanguagePrefix | absURL }}/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
   {{- else -}}
-    <a href="{{ .Site.RSSLink }}" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+    <!-- 在这里注释掉了RSS阅览器的图标吧 -->
+    <!-- <a href="{{ .Site.RSSLink }}" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a> -->
   {{- end }}
 </div>
 
