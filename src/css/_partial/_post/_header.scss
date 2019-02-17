@@ -1,5 +1,8 @@
 .post-header {
   margin-bottom: 0px;
+  font-size: $post-title-font-size - 5;
+  font-weight: $post-title-font-weight;
+  font-family: $global-serif-font-family;
 
   .post-title {
     margin: 0;
@@ -11,37 +14,90 @@
   .post-link {
     @include underline-from-center;
   }
+}// Changed:这里改动超级大,直接把最后面的大括号放在这里了
 
-  .post-meta {
-    float: right;
-    font-size: 14px;
-    color: $post-meta-font-color;
 
-    .post-time {
-      font-size: 15px;
-    }
 
-    .post-category {
-      display: inline;
+// 新增小字格式:右对齐
 
-      a {
-        color: inherit;
+.post-meta-right {
 
-        &::before {
-          content: '·';
-        }
+  float: right;
+  height: 1.5;
+  line-height: 1.5;
+  overflow: hidden;
+  vertical-align: bottom;
+  /*防止内容超出容器或者产生自动换行*/
 
-        &:hover {
-          color: $theme-color;
-        }
-      }
-    }
+  font-size: 14px;
+  color: $post-meta-font-color;
 
-    .more-meta {
-      &::before {
-        content: '·';
-      }
-    }
 
+  .post-time {
+    font-size: 15px;
   }
+
+  .post-category {
+    display: inline;
+
+    a {
+      color: inherit;
+
+      &::before {
+        content: ' 🛒:';
+      }
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+
+  .more-meta {
+    &::before {
+      content: '·';
+    }
+  }
+
+}
+
+// 新增小字格式:左对齐
+.post-meta-left {
+
+  float: left;
+  height: 1.5;
+  line-height: 1.5;
+  overflow: hidden;
+  /*防止内容超出容器或者产生自动换行*/
+
+  font-size: 14px;
+  color: $post-meta-font-color;
+
+
+  .post-time {
+    font-size: 15px;
+  }
+
+  .post-category {
+    display: inline;
+
+    a {
+      color: inherit;
+
+      &::before {
+        content: ' 🛒:';
+      }
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+
+  .more-meta {
+    &::before {
+      content: '·';
+    }
+  }
+
 }

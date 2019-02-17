@@ -1,29 +1,47 @@
 <article class="post">
-  <header class="post-header">
-    <span class="post-title"><a class="post-link" href="{{ .URL }}">>_ {{ .Title }}</a></span>
-    <span class="post-meta">
+  <!-- <header class="post-header">
+  </header> -->
+  <span class="post-header"><a class="post-link" href="{{ .URL }}">>_ {{ .Title }}</a></span>
+  <span class="post-meta-right">
+
+    <div>
+
+      <!-- Changed: -->
+      <!-- 时间 -->
       <span class="post-time"> {{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }} </span>
-      {{ with .Params.categories -}}
-        <div class="post-category">
-          {{ range . -}}
-            <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/"> {{ . }} </a>
-          {{ end -}}
-        </div>
-      {{- end }}
+
       {{- if .Site.Params.moreMeta }}
-        <span class="more-meta"> {{ T "wordCount" .WordCount }} </span>
-        <span class="more-meta"> {{ T "readingTime" .ReadingTime }} </span>
+      <!-- 字数 -->
+      <span class="more-meta"> {{ T "wordCount" .WordCount }} </span>
+      <!-- 阅读预计 -->
+      <span class="more-meta"> {{ T "readingTime" .ReadingTime }} </span>
       {{- end }}
+
+      <br>
+
+      {{ with .Params.categories -}}
+      <!-- 文章分类 -->
+      <span class="post-category">
+        {{ range . -}}
+        <a href="{{ "categories" | relLangURL }}/{{ . | urlize }}/"> {{ . }} </a>
+        {{ end -}}
       </span>
-  </header>
+      {{- end }}
+    </div>
+  </span>
+
   <!-- Content -->
-  <div class="post-content">
-    <!-- 这里进行了去除 摘要 和 "阅读更多" -->
-    <!-- <div class="post-summary">
+
+  <!-- <div class="post-content"> -->
+  <!-- 这里进行了去除 摘要 和 "阅读更多" -->
+  <!-- <div class="post-summary">
       {{ .Summary }}
     </div>
     <div class="read-more">
       <a href="{{ .URL }}" class="read-more-link">{{ T "readMore" }}</a>
     </div> -->
-  </div>
+  <!-- </div> -->
+  <br>
+  <br>
+
 </article>
