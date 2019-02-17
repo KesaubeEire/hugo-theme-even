@@ -32,6 +32,42 @@
   }
 }
 
+// Changed:添加动画:下划线从左侧出现
+
+@mixin underline-from-left() {
+  display: inline-block;
+  vertical-align: left;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 2px;
+    bottom: 0;
+    left: 0%;
+    right: 100%;
+    background: $theme-color;
+    transition-duration: 0.1s;
+    transition-property: right, left;
+    transition-timing-function: ease-out;
+  }
+
+  &.active,
+  &:active,
+  &:focus,
+  &:hover {
+    &:before {
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
 @mixin mobile-menu-icon() {
   @keyframes clickfirst {
     0% {

@@ -12,7 +12,10 @@
   }
 
   .post-link {
-    @include underline-from-center;
+    //Changed:这里把从中间出来滴下划线改成了从左边出来
+    // @include underline-from-center;
+
+    @include underline-from-left;
   }
 }// Changed:这里改动超级大,直接把最后面的大括号放在这里了
 
@@ -38,6 +41,7 @@
   }
 
   .post-category {
+    @include underline-from-left;
     display: inline;
 
     a {
